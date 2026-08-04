@@ -1,0 +1,4 @@
+streamlit
+oletools
+openai
+faiss-cpu
