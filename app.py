@@ -24,7 +24,7 @@ defaults = {
     "history": [],
     "uploader_key": 0,
     "current_page": "AI Tools",
-    "dark_mode": True,
+    "dark_mode": False,
     "kb_index": None,
     "kb_chunks": [],
     "kb_files": []
