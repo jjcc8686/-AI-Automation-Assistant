@@ -113,6 +113,8 @@ dark_mode = st.sidebar.toggle("Dark Mode", value=st.session_state.dark_mode)
 st.session_state.dark_mode = dark_mode
 # apply_theme(dark_mode)
 
+st.write("APP.PY IS RUNNING")
+
 st.sidebar.markdown("---")
 st.sidebar.caption(APP_VERSION_NO)
 st.sidebar.caption("For best widget colours, also set theme in ⋮ → Settings → Theme")
