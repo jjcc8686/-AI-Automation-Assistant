@@ -142,7 +142,13 @@ elif page == "Review History":
 elif page == "Power Query Export Guide":
     render_powerquery_guide()
 elif page == "About Us":
-    render_about_us()
+    st.write("ENTERING ABOUT US")
+
+    try:
+        render_about_us()
+        st.write("ABOUT US COMPLETED")
+    except Exception as e:
+        st.error(f"ABOUT US ERROR: {e}")
 elif page == "Methodology":
     render_methodology()
 else:
