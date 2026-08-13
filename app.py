@@ -126,6 +126,7 @@ if st.sidebar.button("Logout"):
 
 # ====================== PAGE DISPATCH ======================
 page = st.session_state.current_page
+st.write(f"Current page = {page}")
 
 if page == "AI Tools":
     render_ai_tools()
