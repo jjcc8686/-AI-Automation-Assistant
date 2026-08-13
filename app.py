@@ -6,11 +6,9 @@ Handles login, sidebar navigation, theme, and dispatches to page modules.
 
 import streamlit as st
 
-st.write("DIRECT PAGE LOADED")
-
 from config import APP_VERSION_NO
 from helpers.ui_theme import apply_theme
-from pages import (
+from app_pages import (
     render_ai_tools,
     render_knowledge_base,
     render_sample_files,
@@ -26,8 +24,6 @@ st.set_page_config(
     page_icon="⚙",
     layout="wide",
 )
-
-st.error("JEAN TEST")
 
 # ====================== SESSION STATE ======================
 defaults = {
@@ -115,9 +111,7 @@ st.sidebar.markdown("---")
 # Theme
 dark_mode = st.sidebar.toggle("Dark Mode", value=st.session_state.dark_mode)
 st.session_state.dark_mode = dark_mode
-# apply_theme(dark_mode)
-
-st.write("APP.PY IS RUNNING")
+apply_theme(dark_mode)
 
 st.sidebar.markdown("---")
 st.sidebar.caption(APP_VERSION_NO)
@@ -129,28 +123,20 @@ if st.sidebar.button("Logout"):
     st.rerun()
 
 # ====================== PAGE DISPATCH ======================
-
-st.write(f"Current page = {page}")
 page = st.session_state.current_page
 
-if app_pages == "AI Tools":
+if page == "AI Tools":
     render_ai_tools()
-elif app_pages == "Knowledge Base":
+elif page == "Knowledge Base":
     render_knowledge_base()
-elif app_pages == "Sample Files":
+elif page == "Sample Files":
     render_sample_files()
-elif app_pages == "Review History":
+elif page == "Review History":
     render_review_history()
-elif app_pages == "Power Query Export Guide":
+elif page == "Power Query Export Guide":
     render_powerquery_guide()
-elif app_pages == "About Us":
-    st.write("ENTERING ABOUT US")
-
-    try:
-        render_about_us()
-        st.write("ABOUT US COMPLETED")
-    except Exception as e:
-        st.error(f"ABOUT US ERROR: {e}")
+elif page == "About Us":
+    render_about_us()
 elif page == "Methodology":
     render_methodology()
 else:
