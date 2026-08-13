@@ -129,21 +129,21 @@ if st.sidebar.button("Logout"):
     st.rerun()
 
 # ====================== PAGE DISPATCH ======================
-page = st.session_state.current_page
+
 st.write(f"Current page = {page}")
 page = st.session_state.current_page
 
 if app_pages == "AI Tools":
     render_ai_tools()
-elif page == "Knowledge Base":
+elif app_pages == "Knowledge Base":
     render_knowledge_base()
-elif page == "Sample Files":
+elif app_pages == "Sample Files":
     render_sample_files()
-elif page == "Review History":
+elif app_pages == "Review History":
     render_review_history()
-elif page == "Power Query Export Guide":
+elif app_pages == "Power Query Export Guide":
     render_powerquery_guide()
-elif page == "About Us":
+elif app_pages == "About Us":
     st.write("ENTERING ABOUT US")
 
     try:
