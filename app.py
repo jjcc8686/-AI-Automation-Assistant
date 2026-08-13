@@ -6,6 +6,8 @@ Handles login, sidebar navigation, theme, and dispatches to page modules.
 
 import streamlit as st
 
+st.write("DIRECT PAGE LOADED")
+
 from config import APP_VERSION_NO
 from helpers.ui_theme import apply_theme
 from pages import (
