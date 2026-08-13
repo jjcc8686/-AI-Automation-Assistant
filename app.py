@@ -133,7 +133,7 @@ page = st.session_state.current_page
 st.write(f"Current page = {page}")
 page = st.session_state.current_page
 
-if page == "AI Tools":
+if app_pages == "AI Tools":
     render_ai_tools()
 elif page == "Knowledge Base":
     render_knowledge_base()
