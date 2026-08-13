@@ -25,6 +25,8 @@ st.set_page_config(
     layout="wide",
 )
 
+st.error("JEAN TEST")
+
 # ====================== SESSION STATE ======================
 defaults = {
     "authenticated": False,
